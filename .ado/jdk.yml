@@ -6,4 +6,4 @@ pool:
 steps:
   - script: 
       java --version
-      maven --version
+      mvn --version

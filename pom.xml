@@ -100,8 +100,7 @@
             </plugin>
         </plugins>
     </build>
-
-    <distributionManagement>
+ <distributionManagement>
         <repository>
             <id>ADO19JULY</id>
             <url>https://pkgs.dev.azure.com/ADO19JULY/_packaging/ADO19JULY/maven/v1</url>
@@ -112,8 +111,6 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
->>>>>>> 6f1efe623eb3382742a35e4239aee7c6a88b920a
-    </distributionManagement>
-
+</distributionManagement>
 </project>
 

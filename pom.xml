@@ -1,60 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.18</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>com.vijay.hello</groupId>
     <artifactId>hello-world</artifactId>
-    <version>${project.version}</version> <!-- Use property for version -->
-
+    <version>${project.version}</version>
     <name>hello-world</name>
     <description>A simple Spring Boot 2.x app to send hello world message to a user</description>
 
     <properties>
-        <java.version>1.8</java.version>
-        <project.version>1.0.0-SNAPSHOT</project.version> <!-- Define default version property -->
+        <java.version>17</java.version>
+        <project.version>1.0.0-SNAPSHOT</project.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>
+        <!-- Spring Boot starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
+
+        <!-- Spring Boot Web starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!-- Spring Boot Test starter (includes JUnit 5 / Jupiter) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.8.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-        
+            <!-- Spring Boot plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+            <!-- Surefire plugin for JUnit 5 test execution -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <useModulePath>false</useModulePath>
+                </configuration>
+            </plugin>
+
+            <!-- Versions plugin -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>2.15.0</version>
             </plugin>
+
+            <!-- JaCoCo for coverage -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -74,6 +91,8 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- Sonar plugin -->
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
@@ -81,16 +100,19 @@
             </plugin>
         </plugins>
     </build>
+
     <distributionManagement>
         <repository>
-  <id>ADO19JULY</id>
-  <url>https://pkgs.dev.azure.com/ADO19JULY/_packaging/ADO19JULY/maven/v1</url>
-  <releases>
-    <enabled>true</enabled>
-  </releases>
-  <snapshots>
-    <enabled>true</enabled>
-  </snapshots>
-</repository>
+            <id>ADO19JULY</id>
+            <url>https://pkgs.dev.azure.com/ADO19JULY/_packaging/ADO19JULY/maven/v1</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
     </distributionManagement>
+
 </project>
+

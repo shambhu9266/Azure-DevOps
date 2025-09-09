@@ -83,14 +83,14 @@
     </build>
     <distributionManagement>
         <repository>
-            <id>releases</id>
-            <name>Releases Repository</name>
-            <url>http://192.168.1.200:8081/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>Snapshots Repository</name>
-            <url>http://192.168.1.200:8081/repository/maven-snapshots/</url>
-        </snapshotRepository>
+  <id>ADO19JULY</id>
+  <url>https://pkgs.dev.azure.com/ADO19JULY/_packaging/ADO19JULY/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
     </distributionManagement>
 </project>

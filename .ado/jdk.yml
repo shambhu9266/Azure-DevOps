@@ -4,6 +4,8 @@ pool:
   name: ADO19JULY
 
 steps:
-  - script: 
+  - script: |
       java --version
       mvn --version
+    displayName: "Check Java and Maven Versions"
+

@@ -4,11 +4,6 @@ pool:
   name: ADO19JULY
 
 steps:
-  - task: JavaToolInstaller@1
-    inputs:
-      versionSpec: '17'
-      jdkArchitectureOption: 'x64'
-      jdkSourceOption: 'PreInstalled'
   - script: 
       java --version
       maven --version

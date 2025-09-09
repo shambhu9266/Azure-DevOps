@@ -1,25 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                               https://maven.apache.org/xsd/settings-1.0.0.xsd">
   <servers>
+
     <server>
-      <id>releases</id>
-      <username>${env.ART_USER}</username>
-      <password>${env.ART_PASS}</password>
+      <id>ADO19JULY</id>
+      <username>ADO19JULY</username>
+      <password>[PERSONAL_ACCESS_TOKEN]</password>
     </server>
-    <server>
-      <id>snapshots</id>
-      <username>${env.ART_USER}</username>
-      <password>${env.ART_PASS}</password>
-    </server>
-  </servers>
-  <mirrors>
-    <mirror>
-      <id>central-proxy</id>
-      <mirrorOf>central</mirrorOf>
-      <url>http://192.168.1.200:8081/repository/maven-central/</url>
-    </mirror>
-  </mirrors>
+</servers>
 </settings>
